@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1</title>
+    <script>
+        //A string variable is a piece of text wrapped in quotes
+        //alert('Hello World');
+
+        //Backtick operator is in use for this console.log() function
+        console.log(`Hello World`);
+
+        //The variable greeting is assigned to the string
+        var greeting = 'Hello World from a variable';
+
+        //Challenge: Create your first name and last name as variable and print to the console
+        var firstName = 'Samantha';
+        var lastName = 'Marah';
+
+        console.log(firstName);
+        console.log(lastName);
+
+        //Concatentation is joining strings together using +
+        console.log('My first name is ' + firstName + ' ' + 'and my last name is ' + lastName);
+
+        //Backtick string interpolation and assigned to a constant (cannot be changed)
+        const myMessage = `My first name is ${firstName} and my last name is ${lastName}`;
+        console.log(myMessage);
+
+        //Let is the modern form of var for declaring a variable
+        //The backtick operator is used for string interpolation
+        let age = 26;
+        console.log(`My age is ${age}`);
+
+        //Challenge: Can you write a dynamic piece of code that outputs how many years before I am 100?
+
+        let century = 100;
+        let yearsToCentury = century - age;
+        const myCenturyMessage = `I am ${age} years old and I will be ${century} in ${yearsToCentury} years`;
+        console.log(myCenturyMessage);
+
+        //Keyword: function, followed by a demonstrative name
+        //Arguments(parameters) are passed in as inputs into the function
+        function ageToCentury(age){
+            let century = 100;
+            let yearsToCentury = century - age;
+
+            const myCenturyMessage = `I am ${age} years old and I will be ${century} in ${yearsToCentury} years`;
+
+            return myCenturyMessage;
+        }
+
+        //Call the function, execute the function, invoke the function
+        let myAgeToCenturyMessage = ageToCentury(24);
+        console.log(myAgeToCenturyMessage);
+
+        myAgeToCenturyMessage = ageToCentury(52);
+        console.log(myAgeToCenturyMessage);
+
+        myAgeToCenturyMessage = ageToCentury(99);
+        console.log(myAgeToCenturyMessage);
+
+        myAgeToCenturyMessage = ageToCentury(10);
+        console.log(myAgeToCenturyMessage);
+
+        function getYearsToCentury(age, targetYears){
+
+            // '||' means OR
+            if(isNaN(age) || isNaN(targetYears)){
+                return -1;
+            }
+
+            if(age > 100 || age < 1){
+                return -1;
+            }
+
+            if(age > targetYears){
+                return -1;
+            }
+
+            let yearsToCentury = targetYears - age;
+            
+            return yearsToCentury;
+        }
+
+        let _century = 100;
+        yearsToCentury = getYearsToCentury(26, _century);
+
+        if(yearsToCentury >= 0){
+            myMessageAge = `It will take me ${yearsToCentury} years to reach ${_century} years`;
+            console.log(myMessageAge);
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
