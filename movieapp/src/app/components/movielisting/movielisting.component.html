@@ -1,0 +1,118 @@
+<div class="container">
+
+    <div class="row">
+        {{message}}
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let movie of listing" (click)="selectMovie(movie)">
+                    {{movie.title}}
+
+
+                </li>
+                
+
+            </ul>
+
+
+
+        </div>
+        <div class="col-md-6">
+
+            <div class="card">
+                <table class="table" *ngIf="selectedMovie">
+                    <tr>
+                        <td>Title</td>
+                        <td>{{selectedMovie.title}}</td>
+                    </tr>
+                    <tr>
+                        <td>Year</td>
+                        <td>{{selectedMovie.year}}</td>
+                    </tr>
+                    <tr>
+                        <td>Director</td>
+                        <td>{{selectedMovie.director}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Cast</td>
+                        <td>
+                            <ul>
+                                <li *ngFor="let castmember of selectedMovie.cast.split(',')">{{castmember}}</li>
+
+                            </ul>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Monday</td>
+                         <td>
+                            
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                  <li class="page-item" *ngFor="let time of selectedMovie.runningTimes.mon"><a class="page-link" href="#">{{time}}</a></li>
+                                </ul>
+                              </nav>
+                         </td>
+
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>
+                           
+                           <nav aria-label="Page navigation example">
+                               <ul class="pagination">
+                                 <li class="page-item" *ngFor="let time of selectedMovie.runningTimes.tue"><a class="page-link" href="#">{{time}}</a></li>
+                               </ul>
+                             </nav>
+                        </td>
+
+                   </tr>
+
+                   <tr>
+                    <td>Wednesday</td>
+                    <td>
+                       
+                       <nav aria-label="Page navigation example">
+                           <ul class="pagination">
+                             <li class="page-item" *ngFor="let time of selectedMovie.runningTimes.wed"><a class="page-link" href="#">{{time}}</a></li>
+                           </ul>
+                         </nav>
+                    </td>
+
+               </tr>
+
+               <tr>
+                <td>Thursday</td>
+                <td>
+                   
+                   <nav aria-label="Page navigation example">
+                       <ul class="pagination">
+                         <li class="page-item" *ngFor="let time of selectedMovie.runningTimes.thu"><a class="page-link" href="#">{{time}}</a></li>
+                       </ul>
+                     </nav>
+                </td>
+
+           </tr>
+
+
+
+
+
+<tr>
+
+    <td colspan="2"><a class='btn btn-primary' routerLink="/booking">Book Now</a></td>
+</tr>
+
+                </table>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</div>
